@@ -1,0 +1,30 @@
+This is a mirror of http://www.vim.org/scripts/script.php?script_id=3950
+
+This plugin makes it really easy to create your own colour scheme for Vim.  You don't need to understand Vim script and you can base your colour scheme on an existing one if you like.
+
+For colour schemes written entirely with EasyColour, the plugin automatically handles details like:
+
+* Working with limited numbers of colours (the nearest available colour is automatically found for 8, 16 and 256 colour terminals);
+* Changing the background colour: define your colour scheme with (say) a dark background with light foreground colours, set the 'LightAuto' flag and EasyColour will automatically choose some dark foreground colours to work with a light background.
+
+Why write a colour scheme like this:
+
+    let colors_name = "mycolourscheme"
+    hi Normal guibg=DarkBlue guifg=White ctermbg=4
+    hi Statement ctermfg=3 ctermbg=6 gui=undercurl guifg=Yellow guibg=#f6e8d0 guisp=Red
+    hi Keyword guifg=White guibg=DarkBlue ctermfg=0 ctermbg=4
+    hi Comment guifg=SeaGreen ctermfg=2 gui=Bold cterm=bold
+
+when you can write it like this:
+
+    Dark:
+        Normal:White,DarkBlue
+        Statement:Yellow,#F6E8D0,Red,Undercurl
+        Keyword:White
+        Comment:SeaGreen,Style=Bold
+
+with all of the styles automatically highlighted (when you save) so you can see what the colours look like?
+
+I've ported my 'Bandit' colour scheme from the previous (already customised!) format into EasyColour now: it's included in the distribution as an example of a fairly advanced colour scheme.
+
+More details on the website: http://www.cgtk.co.uk/vim-scripts/easycolour
